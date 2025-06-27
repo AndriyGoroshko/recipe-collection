@@ -1,7 +1,7 @@
 :root {
   --primary-color: #2e2e2e;
   --background-color: #deb887;
-  --additinal-color: #ff6347;
+  --additional-color: #ff6347;
   --second-background-color: #cd853f;
   --button-pressed-color: #8f6621;
 }
@@ -9,13 +9,20 @@
 body {
   color: var(--primary-color);
   background-color: var(--background-color);
-  margin: 5;
+  margin: 5px;
 }
 
 h1 {
   font-size: 2rem;
   font-family: "Lora", serif;
   font-weight: 700;
+}
+
+h2 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.5rem;
+  font-family: "Raleway", sans-serif;
 }
 
 header {
@@ -33,9 +40,9 @@ header {
 .dishes {
   margin: 20px;
   display: flex;
-  flex: nowrap;
+  flex-wrap: nowrap;
   justify-content: space-around;
-  align-items: top;
+  align-items: flex-start;
 }
 
 .dish-card {
@@ -101,9 +108,8 @@ figcaption {
 
 .button-to-main-page {
   margin: 0;
-  position: absolute;
-  left: 100px;
   padding: 8px 16px;
+  width: 140px;
   color: var(--primary-color);
   background-color: var(--second-background-color);
   font-family: "Raleway", sans-serif;
@@ -118,9 +124,26 @@ figcaption {
 }
 
 .header-row {
+  width: 90%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+}
+
+.header-grid {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.button-wrapper {
+  justify-self: start;
+}
+
+.spacer {
+  width: 188.26px;
 }
 
 .body-limiter {
@@ -130,23 +153,146 @@ figcaption {
 
 .grid-template {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  max-width: 700px;
+  grid-template-columns: 4fr 3fr;
   margin: 0;
   gap: 15px;
 }
 
 .image {
-  margin: 15px 25px;
-  width: 700px;
   height: auto;
+  max-width: 100%;
+  border-radius: 10px;
+  transition: transform 0.6s ease;
+}
+
+.image:hover {
+  transform: scale(1.05);
 }
 
 .instructions {
-  margin: 15px 25px;
-  width: 700px;
-  height: auto;
-  background-color: #fff;
+  padding: 10px 20px;
+  background-color: var(--second-background-color);
+  border-radius: 20px;
+  border: solid 2px var(--primary-color);
+  font-size: 1.25rem;
+  font-weight: 500;
+  font-family: "Source Code Pro", sans-serif;
 }
+
+.instructions li:not(:last-child) {
+  margin-bottom: 50px;
+}
+
+.first-column,
+.second-column {
+  margin: 15px 25px;
+}
+
+.first-column {
+  margin-left: 70px;
+}
+
 .ingredients {
+  margin-top: 30px;
+  max-width: 100%;
+  padding: 10px 20px;
+  background-color: var(--second-background-color);
+  border-radius: 20px;
+  border: solid 2px var(--primary-color);
+}
+
+.ingredient {
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  max-width: 95%;
+  background-color: var(--background-color);
+  border-radius: 30px;
+  border: solid 2px var(--primary-color);
+}
+
+.ingredient:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.ingredient .image {
+  margin: 10px;
+  max-width: 100%;
+  border-radius: 30px;
+  border: solid 2px var(--primary-color);
+}
+
+.ingredient-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 30px;
+}
+
+.ingredient-heading {
+  height: 30%;
+  width: 70%;
+}
+
+.ingredient-characteristics {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "Source Code Pro", sans-serif;
+}
+
+.ingredient-count {
+  width: 50%;
+  text-align: start;
+}
+
+.ingredient-price {
+  width: 50%;
+  text-align: end;
+}
+
+.ingredient.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  transition: transform 0.6s ease;
+}
+
+.ingredient.total:hover {
+  transform: scale(1.05);
+}
+.ingredient.total .ingredient-description {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  margin: 0;
+}
+
+.ingredient.total .ingredient-heading {
+  width: auto;
+  margin: 0;
+}
+
+.ingredient.total .ingredient-price {
+  text-align: right;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "Source Code Pro", sans-serif;
+}
+
+.ingredient.total .ingredient-characteristics {
+  width: 100%;
+  align-items: flex-end;
+}
+
+.ingredient.total.subtotal {
+  padding: 10px;
+  margin-bottom: 20px;
 }
