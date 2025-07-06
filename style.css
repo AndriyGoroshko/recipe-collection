@@ -28,7 +28,6 @@ h2 {
 header {
   margin: 20px;
   justify-items: center;
-  /*border-bottom: 10px solid var(--primary-color);*/
 }
 
 .header-line {

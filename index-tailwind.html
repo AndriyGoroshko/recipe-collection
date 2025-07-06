@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#2e2e2e",
+              background: "#deb887",
+              additional: "#ff6347",
+              "second-bg": "#cd853f",
+              "button-pressed": "#8f6621",
+            },
+            fontFamily: {
+              lora: ["Lora", "serif"],
+              raleway: ["Raleway", "sans-serif"],
+              "source-code": ["Source Code Pro", "sans-serif"],
+            },
+            boxShadow: {
+              borsch: "-10px 20px 20px rgba(0, 0, 0, 0.3)",
+              medovyk: "0 20px 20px rgba(0, 0, 0, 0.3)",
+              shawarma: "10px 20px 20px rgba(0, 0, 0, 0.3)",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="./style-tailwind.css" />
+
+    <title>Recipe Collection</title>
+  </head>
+  <body class="m-[5px] bg-background">
+    <header class="m-[20px] flex justify-center align-center flex-wrap">
+      <h1 class="text-3xl font-extrabold font-lora text-primary m-2 pb-4">
+        My Culinary Classics
+      </h1>
+      <div class="w-[90%] h-[4px] bg-primary"></div>
+    </header>
+    <section class="m-[20px] flex justify-around align-start">
+      <a
+        href="./dishes/borsch-tailwind.html"
+        class="m-[5px] w-[30%] h-[60%] text-primary border-[3px] border-primary rounded-lg shadow-none hover:shadow-borsch transition-[box-shadow,transform] ease-in-out hover:scale-105"
+        style="transition-duration: 600ms, 600ms"
+      >
+        <figure class="m-0 w-full h-full text-center bg-second-bg">
+          <img
+            class="w-full h-auto block rounded-lg"
+            src="./images/borsch.jpg"
+            alt="A bowl of traditional Ukrainian borsch"
+          />
+          <figcaption
+            class="px-[5px] text-primary font-bold w-full font-raleway text-2xl"
+          >
+            Borsch
+          </figcaption>
+          <div class="text-xl font-medium font-source-code">
+            A rich, hearty beet soup bursting with the bold flavors of Ukrainian
+            tradition.
+          </div>
+        </figure>
+      </a>
+
+      <a
+        href="./dishes/medovyk-tailwind.html"
+        class="m-[5px] w-[30%] h-[60%] text-primary border-[3px] border-primary rounded-lg shadow-none hover:shadow-medovyk transition-[box-shadow,transform] ease-in-out hover:scale-105"
+        style="transition-duration: 600ms, 600ms"
+      >
+        <figure class="m-0 w-full h-full text-center bg-second-bg">
+          <img
+            class="w-full h-auto block rounded-lg"
+            src="./images/medovyk.jpg"
+            alt="A slice of honey cake Medovyk"
+          />
+          <figcaption
+            class="px-[5px] text-primary font-bold w-full font-raleway text-2xl"
+          >
+            Medovyk
+          </figcaption>
+          <div class="text-xl font-medium font-source-code">
+            A delicate honey-layered cake that melts in your mouth with every
+            bite.
+          </div>
+        </figure>
+      </a>
+
+      <a
+        href="./dishes/shawarma-tailwind.html"
+        class="m-[5px] w-[30%] h-[60%] text-primary border-[3px] border-primary rounded-lg shadow-none hover:shadow-shawarma transition-[box-shadow,transform] ease-in-out hover:scale-105"
+        style="transition-duration: 600ms, 600ms"
+      >
+        <figure class="m-0 w-full h-full text-center bg-second-bg">
+          <img
+            class="w-full h-auto block rounded-lg"
+            src="./images/shawarma.jpg"
+            alt="A wrapped shawarma with vegetables"
+          />
+          <figcaption
+            class="px-[5px] text-primary font-bold w-full font-raleway text-2xl"
+          >
+            Shawarma
+          </figcaption>
+          <div class="text-xl font-medium font-source-code">
+            Juicy, spiced meat wrapped in warm flatbread with fresh veggies and
+            creamy sauce.
+          </div>
+        </figure>
+      </a>
+    </section>
+  </body>
+</html>

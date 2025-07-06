@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#2e2e2e",
+              background: "#deb887",
+              additional: "#ff6347",
+              "second-bg": "#cd853f",
+              "button-pressed": "#8f6621",
+            },
+            fontFamily: {
+              lora: ["Lora", "serif"],
+              raleway: ["Raleway", "sans-serif"],
+              "source-code": ["Source Code Pro", "sans-serif"],
+            },
+            boxShadow: {
+              borsch: "-10px 20px 20px rgba(0, 0, 0, 0.3)",
+              medovyk: "0 20px 20px rgba(0, 0, 0, 0.3)",
+              shawarma: "10px 20px 20px rgba(0, 0, 0, 0.3)",
+            },
+          },
+        },
+        plugins: [
+          function ({ addComponents }) {
+            addComponents({
+              ".ingredient": {
+                display: "grid",
+                gridTemplateColumns: "30% 70%",
+                maxWidth: "95%",
+                marginLeft: "auto",
+                marginRight: "auto",
+                marginBottom: "10px",
+                borderRadius: "1.5rem",
+                backgroundColor: "theme('colors.background')",
+                borderWidth: "2px",
+                borderColor: "theme('colors.primary')",
+              },
+              ".ingredient-image": {
+                margin: "10px",
+                maxWidth: "100%",
+                borderRadius: "1.5rem",
+                borderWidth: "2px",
+                borderColor: "theme('colors.primary')",
+              },
+              ".ingredient-description": {
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+                margin: "30px",
+              },
+              ".ingredient-heading": {
+                height: "30%",
+                width: "70%",
+              },
+              ".ingredient-heading h2": {
+                margin: 0,
+                fontWeight: "700",
+                fontSize: "1.5rem",
+                fontFamily: "theme('fontFamily.raleway')",
+              },
+              ".ingredient-characteristics": {
+                display: "flex",
+                justifyContent: "space-between",
+                fontSize: "1.25rem",
+                fontWeight: "500",
+                fontFamily: "theme('fontFamily.source-code')",
+              },
+              ".ingredient-count": {
+                width: "50%",
+                textAlign: "start",
+              },
+              ".ingredient-price": {
+                width: "50%",
+                textAlign: "end",
+              },
+            });
+          },
+        ],
+      };
+    </script>
+
+    <link rel="stylesheet" href="./style-tailwind.css" />
+    <title>Borsch</title>
+  </head>
+  <body class="m-[5px] bg-background">
+    <div class="w-[1500px] h-auto">
+      <header class="m-[20px] flex justify-center align-center flex-wrap">
+        <div class="w-[90%] flex justify-between align-center">
+          <div class="justify-self-start mt-5">
+            <a
+              href="../index-tailwind.html"
+              class="m-0 py-2 px-4 w-[140px] text-primary bg-second-bg font-raleway rounded-md border border-primary transition-colors duration-[0.3s] ease-out hover:bg-button-pressed hover:text-stone-50"
+              >← Back to all recipes</a
+            >
+          </div>
+          <div>
+            <h1 class="text-3xl font-extrabold font-lora text-primary m-2 py-2">
+              Borsh
+            </h1>
+          </div>
+          <div class="w-[188.26px]"></div>
+        </div>
+        <div class="w-[90%] h-[4px] bg-primary"></div>
+      </header>
+      <div class="grid grid-cols-[4fr_3fr] m-0 gap-[15px]">
+        <div class="mx-[15px] ml-[70px] mr-[25px] my-[25px]">
+          <img
+            class="h-auto max-w-full rounded-xl transition-transform duration-[0.6s] ease hover:scale-105"
+            src="../images/borsch.jpg"
+            alt="No borsch loaded"
+          />
+
+          <div
+            class="mt-[30px] max-w-full px-[10px] py-[20px] bg-second-bg rounded-2xl border-2 border-primary"
+          >
+            <div
+              class="mx-auto grid grid-cols-[30%_70%] max-w-[95%] bg-background rounded-3xl border-2 border-primary mb-[10px]"
+            >
+              <div
+                class="m-[10px] max-w-full rounded-3xl border-2 border-primary"
+              >
+                <img
+                  class="h-auto max-w-full rounded-3xl transition-transform duration-[0.6s] ease hover:scale-105"
+                  src="../images/ribs.jpeg"
+                  alt="No ingredient loaded"
+                />
+              </div>
+              <div class="flex flex-col justify-between m-[30px]">
+                <div class="h-[30%] w-[70%]">
+                  <h2 class="m-0 font-bold text-2xl font-raleway">
+                    Smoked pork ribs
+                  </h2>
+                </div>
+                <div
+                  class="flex justify-between text-xl font-medium font-source-code"
+                >
+                  <div class="w-[50%] text-start">400g</div>
+                  <div class="w-[50%] text-end">$2.11 / ₴84.6</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ingredient">
+              <div class="ingredient-image">
+                <img
+                  class="h-auto max-w-full rounded-3xl transition-transform duration-[0.6s] ease hover:scale-105"
+                  src="../images/white-cabbage.jpg"
+                  alt="No ingredient loaded"
+                />
+              </div>
+              <div class="ingredient-description">
+                <div class="ingredient-heading"><h2>White cabbage</h2></div>
+                <div class="ingredient-characteristics">
+                  <div class="ingredient-count">250g</div>
+                  <div class="ingredient-price">$0.09 / ₴3.60</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ingredient">
+              <div class="ingredient-image">
+                <img
+                  class="h-auto max-w-full rounded-3xl transition-transform duration-[0.6s] ease hover:scale-105"
+                  src="../images/potatoes.jpg"
+                  alt="No ingredient loaded"
+                />
+              </div>
+              <div class="ingredient-description">
+                <div class="ingredient-heading"><h2>Potatoes</h2></div>
+                <div class="ingredient-characteristics">
+                  <div class="ingredient-count">3 pcs (~450g)</div>
+                  <div class="ingredient-price">$0.34 / ₴13.60</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ingredient">
+              <div class="ingredient-image">
+                <img
+                  class="h-auto max-w-full rounded-3xl transition-transform duration-[0.6s] ease hover:scale-105"
+                  src="../images/carrot.jpg"
+                  alt="No ingredient loaded"
+                />
+              </div>
+              <div class="ingredient-description">
+                <div class="ingredient-heading"><h2>Carrot</h2></div>
+                <div class="ingredient-characteristics">
+                  <div class="ingredient-count">1 pc (~100g)</div>
+                  <div class="ingredient-price">$0.08 / ₴3.20</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ingredient">
+              <div class="ingredient-image">
+                <img
+                  class="h-auto max-w-full rounded-3xl transition-transform duration-[0.6s] ease hover:scale-105"
+                  src="../images/beetroot.jpg"
+                  alt="No ingredient loaded"
+                />
+              </div>
+              <div class="ingredient-description">
+                <div class="ingredient-heading"><h2>Beet</h2></div>
+                <div class="ingredient-characteristics">
+                  <div class="ingredient-count">1 pc (~100g)</div>
+                  <div class="ingredient-price">$0.06 / ₴2.40</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ingredient">
+              <div class="ingredient-image">
+                <img
+                  class="h-auto max-w-full rounded-3xl transition-transform duration-[0.6s] ease hover:scale-105"
+                  src="../images/onion.jpg"
+                  alt="No ingredient loaded"
+                />
+              </div>
+              <div class="ingredient-description">
+                <div class="ingredient-heading"><h2>Onion</h2></div>
+                <div class="ingredient-characteristics">
+                  <div class="ingredient-count">1 pc (~100g)</div>
+                  <div class="ingredient-price">$0.04 / ₴1.60</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ingredient">
+              <div class="ingredient-image">
+                <img
+                  class="h-auto max-w-full rounded-3xl transition-transform duration-[0.6s] ease hover:scale-105"
+                  src="../images/sugar.jpg"
+                  alt="No ingredient loaded"
+                />
+              </div>
+              <div class="ingredient-description">
+                <div class="ingredient-heading"><h2>Sugar</h2></div>
+                <div class="ingredient-characteristics">
+                  <div class="ingredient-count">50g</div>
+                  <div class="ingredient-price">$0.04 / ₴1.60</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ingredient">
+              <div class="ingredient-image">
+                <img
+                  class="h-auto max-w-full rounded-3xl transition-transform duration-[0.6s] ease hover:scale-105"
+                  src="../images/red-peppers.jpg"
+                  alt="No ingredient loaded"
+                />
+              </div>
+              <div class="ingredient-description">
+                <div class="ingredient-heading"><h2>Sweet bell pepper</h2></div>
+                <div class="ingredient-characteristics">
+                  <div class="ingredient-count">1pc (~150g)</div>
+                  <div class="ingredient-price">$0.18 / ₴7.20</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ingredient">
+              <div class="ingredient-image">
+                <img
+                  class="h-auto max-w-full rounded-3xl transition-transform duration-[0.6s] ease hover:scale-105"
+                  src="../images/peeled-canned-tomato.jpg"
+                  alt="No ingredient loaded"
+                />
+              </div>
+              <div class="ingredient-description">
+                <div class="ingredient-heading">
+                  <h2>Peeled canned tomatoes</h2>
+                </div>
+                <div class="ingredient-characteristics">
+                  <div class="ingredient-count">200g</div>
+                  <div class="ingredient-price">$0.75 / ₴30.00</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ingredient">
+              <div class="ingredient-image">
+                <img
+                  class="h-auto max-w-full rounded-3xl transition-transform duration-[0.6s] ease hover:scale-105"
+                  src="../images/tomato-paste.jpg"
+                  alt="No ingredient loaded"
+                />
+              </div>
+              <div class="ingredient-description">
+                <div class="ingredient-heading"><h2>Tomato paste</h2></div>
+                <div class="ingredient-characteristics">
+                  <div class="ingredient-count">2 tbsp (~30g)</div>
+                  <div class="ingredient-price">$0.23 / ₴9.20</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ingredient">
+              <div class="ingredient-image">
+                <img
+                  class="h-auto max-w-full rounded-3xl transition-transform duration-[0.6s] ease hover:scale-105"
+                  src="../images/black-peppercorns.jpg"
+                  alt="No ingredient loaded"
+                />
+              </div>
+              <div class="ingredient-description">
+                <div class="ingredient-heading"><h2>Black peppercorns</h2></div>
+                <div class="ingredient-characteristics">
+                  <div class="ingredient-count">3 pcs</div>
+                  <div class="ingredient-price">$0.02 / ₴0.80</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ingredient">
+              <div class="ingredient-image">
+                <img
+                  class="h-auto max-w-full rounded-3xl transition-transform duration-[0.6s] ease hover:scale-105"
+                  src="../images/allspice-cloves.jpg"
+                  alt="No ingredient loaded"
+                />
+              </div>
+              <div class="ingredient-description">
+                <div class="ingredient-heading"><h2>Allspice cloves</h2></div>
+                <div class="ingredient-characteristics">
+                  <div class="ingredient-count">2 pcs</div>
+                  <div class="ingredient-price">$0.02 / ₴0.80</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ingredient">
+              <div class="ingredient-image">
+                <img
+                  class="h-auto max-w-full rounded-3xl transition-transform duration-[0.6s] ease hover:scale-105"
+                  src="../images/bay-leaves.jpg"
+                  alt="No ingredient loaded"
+                />
+              </div>
+              <div class="ingredient-description">
+                <div class="ingredient-heading"><h2>Bay leaves</h2></div>
+                <div class="ingredient-characteristics">
+                  <div class="ingredient-count">2 pcs</div>
+                  <div class="ingredient-price">$0.01 / ₴0.40</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ingredient">
+              <div class="ingredient-image">
+                <img
+                  class="h-auto max-w-full rounded-3xl transition-transform duration-[0.6s] ease hover:scale-105"
+                  src="../images/garlic.jpg"
+                  alt="No ingredient loaded"
+                />
+              </div>
+              <div class="ingredient-description">
+                <div class="ingredient-heading"><h2>Garlic</h2></div>
+                <div class="ingredient-characteristics">
+                  <div class="ingredient-count">3 cloves (~9g)</div>
+                  <div class="ingredient-price">$0.01 / ₴0.40</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ingredient">
+              <div class="ingredient-image">
+                <img
+                  class="h-auto max-w-full rounded-3xl transition-transform duration-[0.6s] ease hover:scale-105"
+                  src="../images/sunflower-oil.jpg"
+                  alt="No ingredient loaded"
+                />
+              </div>
+              <div class="ingredient-description">
+                <div class="ingredient-heading"><h2>Sunflower oil</h2></div>
+                <div class="ingredient-characteristics">
+                  <div class="ingredient-count">4 tbsp (~60ml)</div>
+                  <div class="ingredient-price">$0.11 / ₴4.40</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ingredient">
+              <div class="ingredient-image">
+                <img
+                  class="h-auto max-w-full rounded-3xl transition-transform duration-[0.6s] ease hover:scale-105"
+                  src="../images/salt.jpg"
+                  alt="No ingredient loaded"
+                />
+              </div>
+              <div class="ingredient-description">
+                <div class="ingredient-heading"><h2>Salt</h2></div>
+                <div class="ingredient-characteristics">
+                  <div class="ingredient-count">to taste</div>
+                  <div class="ingredient-price">$0.01 / ₴0.40</div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="ingredient flex justify-between align-center p-[20px] transition-transform duration-[0.6s] ease hover:scale-105"
+            >
+              <div
+                class="ingredient-description flex justify-between align-center flex-row w-full m-0"
+              >
+                <div class="ingredient-heading w-auto m-0"><h2>Total:</h2></div>
+
+                <div
+                  class="ingredient-price text-right text-xl font-medium font-source-code"
+                >
+                  $4.90 / ₴196.00
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mx-[15px] my-[25px]">
+          <div
+            class="px-[10px] py-[20px] bg-second-bg rounded-2xl border-2 border-primary text-xl font-normal font-source-code"
+          >
+            <ol>
+              <li class="mb-[50px]">1. Peel and dice the potatoes.</li>
+              <li class="mb-[50px]">
+                2. Peel the onion and dice finely. Julienne the carrot and the
+                beetroot.
+              </li>
+              <li class="mb-[50px]">
+                3. This time we’re using a sweet red bell pepper, which will
+                make the red color of the borscht even more intense. Remove the
+                core and the seeds from the pepper and then julienne it.
+              </li>
+              <li class="mb-[50px]">
+                4. Pour about 4 tbsp oil into the instant pot and add the
+                pepper, onion, carrot and beet. Salt and cook for 15 minutes on
+                sauté mode.
+              </li>
+              <li class="mb-[50px]">
+                5. While the vegetables are cooking, prepare the ribs. Cut them
+                into segments or large chunks. Add to the instant pot.
+              </li>
+              <li class="mb-[50px]">
+                6. Then add the chopped peeled tomatoes. You can use both canned
+                tomatoes and tomato paste. Salt to taste and add about ½ tsp
+                sugar to balance out the flavor.
+              </li>
+              <li class="mb-[50px]">
+                7. Shred the cabbage and add it to the instant pot along with
+                the potatoes.
+              </li>
+              <li>
+                8. Add about 2 litres of water and switch to soup mode. Cook for
+                40 minutes. Once the vegetables have almost cooked through,
+                finely mince the garlic cloves and add to the pot. Serve with
+                sour cream and salted lard.
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
